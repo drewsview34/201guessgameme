@@ -1,6 +1,22 @@
 'use strict';
 
-function andrewQuestions (arraysIndex) {
+
+var userName = prompt('Welcome to my page! What\'s your name?');
+
+var totalCorrect = 0;
+
+for(var i=1; i<6; i++) {
+  totalCorrect += firstFiveQuestions(i);
+}
+
+totalCorrect += question6();
+totalCorrect += question7();
+
+
+alert('Congrats, ' + userName + '! You got ' + totalCorrect + ' answers correct.');
+
+
+function firstFiveQuestions (arraysIndex) {
   //array for questions
   var questions = [0, 'Is my name Andrew?', 'Am I 33 years old?', 'Was I born is Seattle?', 'Is my favorite food tacos?', 'Am I a student at Code Fellows?'];
   console.log(questions);
@@ -31,61 +47,57 @@ function andrewQuestions (arraysIndex) {
   return correctTally;
 }
 
-var userName = prompt('Welcome to my page! What\'s your name?');
-
-var totalCorrect = 0;
-
-for(var i=1; i<6; i++) {
-  totalCorrect += andrewQuestions(i);
+function question6() {
+  
+  var correctTally = 0; // total correct tally for return to main code
+  console.log('correctTally', correctTally);
+  var sportsNumber = 34;
+  console.log ('sportsNumber', sportsNumber);
+  var userGuess = parseInt(prompt('What\'s my favorite number? Here\'s a hint... Guess between 30 and 40.'));
+  console.log('userGuess', userGuess);
+  
+  var i = 0;
+  while (userGuess !== sportsNumber && i < 3) {
+    if (userGuess > sportsNumber) {
+      userGuess = parseInt(prompt('Your guess was too high. Try again'));
+      i++;
+      console.log('i', i);
+    } else if (userGuess < sportsNumber) {
+      userGuess = parseInt(prompt('Your guess was too low. Try again.'));
+      i++;
+      console.log('i', i);
+    } else if (userGuess === sportsNumber) {
+      alert('You\'re correct! That was my high school sports\' number.');
+      correctTally++;
+    } else {
+      alert('Your response is invalid. Try again.');
+      i++;
+    }
+    return correctTally;
+  }
 }
 
-alert('Congrats, ' + userName + '! You got ' + totalCorrect + ' answers correct.');
-
-
-// Q6
-// var sportsNumber = 34;
-// console.log ('sportsNumber', sportsNumber);
-// var userGuess = parseInt(prompt('What\'s my favorite number? Here\'s a hint... Guess between 30 and 40.'));
-// console.log('userGuess', userGuess);
-
-// var i = 0;
-// while (userGuess !== 34 && i < 3) {
-//   if (userGuess > 34) {
-//     userGuess = parseInt(prompt('Your guess was too high. Try again'));
-//     i++;
-//     console.log('i', i);
-//   }
-//   if (userGuess < 34 && i < 3) {
-//     userGuess = parseInt(prompt('Your guess was too low. Try again.'));
-//     i++;
-//     console.log('i', i);
-//   }
-// }
-// if (userGuess === 34) {
-//   alert('You\'re correct! That was my high school sports\' number.');
-// } else {
-//   alert('Too bad. You\'re out of tries.');
-// }
-// //Q7
-// var userColorGuess = prompt('What\'s my favorite color?').toUpperCase();
-// console.log('userColorGuess', userColorGuess);
-// var counter = 0;
-// var myColors=['GREEN','WHITE', 'RED'];
-// while(counter < 7 && myColors === true){
-//   for(var index = 0; index <= myColors.length; index++){
-//     if(userColorGuess === myColors[index])
-//     {
-//       alert('You are correct!');
-//       myColors++;
-//     }
-//     if(myColors === true)
-//     {
-//       break;
-//     }
-//     else
-//     {
-//       userColorGuess = prompt('Try again.');
-//       counter++;
-//     }
-//   }
-// }
+function question7 () {
+  //Q7
+  var correctTally = 0; // total correct tally for return to main code
+  console.log('correctTally', correctTally);
+  // var userColorGuess = prompt('What\'s my favorite color?').toUpperCase();
+  // console.log('userColorGuess', userColorGuess);
+  // var counter = 0;
+  // var myColors=['GREEN','WHITE', 'RED'];
+  // while(counter < 7){
+  //   for(var counter = 0; counter < myColors.length; counter++){
+  //     if(userColorGuess === myColors[counter])
+  //     {
+  //       alert('You are correct!');
+  //       correctTally++;
+  //       counter = myColors.length;
+  //       break;
+  //     } else {
+  //       userColorGuess = prompt('Try again.');
+  //       counter++;
+  //     }
+  //   }
+  // }
+  return correctTally;
+}
