@@ -69,22 +69,22 @@ if (userGuess === 34) {
 } else {
   alert('Too bad. You\'re out of tries.');
 }
+
 //Q7
-var cities = ['buckley', 'kent', 'seattle']
-var cityResponse = prompt('sdfddsfdfs');
-
-cityResponse = false;
-
-for (var c = 0; c < cities.length; c++){
-  if (cityResponse === cities[c])
-  {
-    cityResponse === true;
-  }
-
-  if (cityResponse === true)
-  {
-    alert('congrates');
-  }else{
-    alert('miss');
+var correctState = false;
+var guessState;
+var triesLeft = 6;
+var states = ['MEXICO', 'CANADA'];
+while(!correctState && triesLeft > 0) {
+  guessState = prompt('Guess what countries I\'ve traveled to?').toUpperCase();
+  console.log('guessState', guessState);
+  for(var j = 0; j < states.length; j++) {
+    if(guessState === states[i]){
+      alert('That\'s one of them. Good job.');
+      correctState = true;
+    }else if(guessState !== states[i] && (j === states.length - 1)) {
+      triesLeft--;
+      alert('Sorry, wrong state. You have ' + triesLeft + ' tries left!');
+    }
   }
 }
