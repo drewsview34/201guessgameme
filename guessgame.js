@@ -1,5 +1,5 @@
 'use strict ""';
-
+var shannon = 'wuz here';
 //Alert user to answer is only yes or no
 alert('Please respond to the following questions with y, yes, Y, YES.');
 
@@ -70,25 +70,21 @@ if (userGuess === 34) {
   alert('Too bad. You\'re out of tries.');
 }
 //Q7
-var userColorGuess = prompt('What\'s my favorite color?').toUpperCase();
-console.log('userColorGuess', userColorGuess);
-var counter = 0;
-var myColors=['GREEN','WHITE', 'RED'];
-while(counter < 7 && myColors === true){
-  for(var index = 0; index <= myColors.length; index++){
-    if(userColorGuess === myColors[index])
-    {
-      alert('You are correct!');
-      myColors++;
-    }
-    if(myColors === true)
-    {
-      break;
-    }
-    else
-    {
-      userColorGuess = prompt('Try again.');
-      counter++;
-    }
+var cities = ['buckley', 'kent', 'seattle']
+var cityResponse = prompt('sdfddsfdfs');
+
+cityResponse = false;
+
+for (var c = 0; c < cities.length; c++){
+  if (cityResponse === cities[c])
+  {
+    cityResponse === true;
+  }
+
+  if (cityResponse === true)
+  {
+    alert('congrates');
+  }else{
+    alert('miss');
   }
 }
